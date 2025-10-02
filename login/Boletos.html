@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesBoleto.css">
+</head>
+<body>
+    <h1 style="background-color: rgb(107, 8, 116); padding: 1em; text-align: center; color: rgb(17, 202, 202);">Boletos</h1>
+    <h2 style="text-align: center;">Acompañantes</h2>
+    <label for="" > Adultos</label> <br />
+    <input type="number" name="personas" id="adultos" > <br />
+    <label for="">Niños</label> <br />
+    <input type="number" name="personas" id="niños"> <br />
+
+    <h2 style="text-align: center;">¿Cuantas maletas?</h2>
+    <input type="number" name="maleta" id="NumMaleta"> <br /> <br />
+
+     <label for="">¿Es residente?</label> <br />
+    <input type="radio" id="ResidenteSi" name="residente"/> 
+    <label for="">Si</label>
+    <input type="radio" id="ResidenteNo" name="residente" checked/> 
+    <label for="">No</label>
+    <br /><br />
+    <button type= "button" onclick="calcularPrecio()">Calcular precio</button>
+    <div id= "resultado"> </div>
+
+    <script>
+        function calcularPrecio(){
+            const adultos=  parseFloat( document.getElementById("adultos") .value) * 100 ||0;
+            const niños = parseFloat(document.getElementById("niños").value) * 75 ||0;
+            const maletas = parseFloat(document. getElementById("NumMaleta").value)* 65 ||0;
+             const precioTotal = adultos + niños + maletas; 
+
+            var precioFinal = precioTotal;
+            
+             const radioSi = document.getElementById("ResidenteSi");
+            const radioNo = document.getElementById("ResidenteNo");
+            
+            if (radioSi.checked){
+                precioFinal = precioTotal * 0.25;
+            }
+            else{
+                precioFinal = precioTotal;
+            }
+            document.getElementById("resultado").innerValue = "Precio total" + precioFinal
+            alert("El precio es " + precioFinal + "$");
+        }
+    </script>
+    <footer>
+            <p style="background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;">© 2025 RepasWeb</p>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, sans-serif;
+    margin : 0;
+    background-color: #2f424246;
+}
+
+header{
+    background-color: #17a035;
+    color: white;
+    padding:1em;
+    text-align: center;
+}
+nav a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+main{
+    padding: 20px;
+    text-align: center;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#tituloprincipal{
+    font-size: 30px;
+}
+
+/* .= clase*/
+.enlaceazul{
+    color: blue;
+}

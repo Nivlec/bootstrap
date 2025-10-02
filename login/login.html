@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Iniciar sesion</h1>
+    <label for="Usuario"></label> <br />
+    <input type="text"  id="Usuario"> <br />
+    <label for="Contraseña"></label> <br />
+    <input type="text" id="Contraseña"> <br />
+    <button type="button" onclick="validarLogin()">Iniciar</button> 
+
+    <script>
+        const USUARIO_VALID = "admin";
+        const CONTRASEÑA_VALID = "secret1234";
+
+        function validarLogin(){
+            const Usuario = document.getElementById("Usuario").value;
+            const Contraseña = document.getElementById("Contraseña").value;
+
+            if (Usuario == ""){
+                alert("El usuario es obligatorio");
+                return;
+            }
+            if (Contraseña == ""){
+                alert("La contraseña es obligatoria");
+                return;
+            }
+            if (Usuario == USUARIO_VALID && Contraseña == CONTRASEÑA_VALID) {
+                alert("Login correcta");
+                window.location.href = "http://www.marca.com";
+            } else {
+                alert(" Usuario o Contraseña incorrectas");
+            }
+        }
+    </script>
+</body>
+</html>

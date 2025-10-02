@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculo descuento residente</h1>
+    <label for="">Precio base($)</label> 
+    <input type="number" name="" id= "precio" /> <br />
+    <label for="">¿Es residente?</label> <br />
+    <input type="radio" id="ResidenteSi" name="residente"/> 
+    <label for="">Si</label>
+    <input type="radio" id="ResidenteNo" name="residente"/> 
+    <label for="">No</label>
+    <br /><br />
+    <button type= "button" onclick="calcularPrecio()">Calcular precio</button>
+
+    <script>
+        function calcularPrecio(){
+            const precio = parseFloat(document.getElementById("precio").value);
+            const radioSi = document.getElementById("ResidenteSi");
+            const radioNo = document.getElementById("ResidenteNo");
+
+            var precioFinal = precio;
+            
+            if (radioSi.checked){
+                precioFinal = precio * 0.25;
+            }
+            else{
+                precioFinal = precio;
+            }
+            alert("El precio es " + precioFinal + "$");
+        }
+    </script>
+</body>
+</html>
